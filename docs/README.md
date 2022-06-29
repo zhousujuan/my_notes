@@ -56,6 +56,10 @@
 
 ## AngularJS
 
+图标库：[Material Symbols and Icons - Google Fonts](https://fonts.google.com/icons?selected=Material+Icons:sd_storage&icon.query=sort&icon.style=Outlined)
+
+ui库：[AngularJS Material - Demos > Icon](https://material.angularjs.org/latest/demo/icon)
+
 # TypeScript
 
 ## 安装
