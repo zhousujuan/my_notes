@@ -8,11 +8,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="./css/themes/vue.css">
   <title>全栈学习</title>
+  <style>
+    nav {
+    }
+    img {
+      cursor: pointer;
+      height: 32px;
+      width: 32px;
+    }
+  </style>
 </head>
 <body>
   <nav>
-    <a href="#/">EN</a>
-    <a href="#/zh-cn/">中文</a>
+    <a href="#/">首页</a>
+    <a href="#/前端/HTML+CSS.md">HTML+CSS</a>
+    <a href="#/desc/desc.md">个人介绍</a>
+    <a href="https://gitee.com/zhousujuan/my_note"><img id="gitee_" src="./image/gitee.svg" alt="gitee"></a>
+    <a href="https://github.com/zhousujuan/my_notes"><img id="github" src="./image/github.svg" alt="gitee"></a>
   </nav>
   <div id="app">加载中...</div>
   <script>
@@ -32,7 +44,7 @@
         errorText  : '复制失败',
         successText: '复制成功'
       }
-    }
+    };
   </script>
   <!-- Docsify v4 -->
   <script src="./js/docsify.min.js"></script>
