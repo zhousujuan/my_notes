@@ -1,3 +1,7 @@
+> 
+>
+> 
+>
 > 我的博客
 >
 > [CSDN](https://blog.csdn.net/qq_42592823?spm=1018.2226.3001.5343)
@@ -54,11 +58,163 @@
 
 ## Angular
 
+------
+
 ## AngularJS
 
 图标库：[Material Symbols and Icons - Google Fonts](https://fonts.google.com/icons?selected=Material+Icons:sd_storage&icon.query=sort&icon.style=Outlined)
 
 ui库：[AngularJS Material - Demos > Icon](https://material.angularjs.org/latest/demo/icon)
+
+### 简介
+
+#### JavaScript 框架。
+
+**AngularJS 是一个 JavaScript 框架。**
+
+它可通过` <script> `标签添加到 HTML 页面。
+
+```js
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js" rel="external nofollow" rel="external nofollow" rel="external nofollow" ></script>
+```
+
+> 建议把脚本放在 <body> 元素的底部。这会提高网页加载速度，因为 HTML 加载不受制于脚本加载。
+
+#### 通过指令扩展了HTML
+
+**AngularJS通过指令扩展了HTML，并且通过表达式绑定数据到 HTML。**
+
+1. AngularJS 通过 **ng-directives** 扩展了 HTML。
+2. **ng-app** 指令定义一个 AngularJS 应用程序。
+3. **ng-model** 指令把元素值（比如输入域的值）绑定到应用程序。
+4. **ng-bind** 指令把应用程序数据绑定到 HTML 视图。
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<div ng-app="">
+  <p>在输入框中尝试输入：</p>
+  <p>姓名：<input type="text" ng-model="name"></p>
+  <p ng-bind="name"></p>
+</div>
+
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js" rel="external nofollow" rel="external nofollow" rel="external nofollow" ></script>
+
+</body>
+</html>
+```
+
+[^TODO]: (: 后续的这里将添加一个尝试一下的按钮（或者是点击运行的按钮），实现，用户点击之后，直接在电脑上面通过插件运行代码，查看效果)
+
+> 实例讲解：
+>
+> 当网页加载完毕，AngularJS 自动开启。
+>
+> **ng-app** 指令告诉 AngularJS，<div> 元素是 AngularJS **应用程序** 的"所有者"。
+>
+> **ng-model** 指令把输入域的值绑定到应用程序变量 **name**。
+>
+> **ng-bind** 指令把应用程序变量 name 绑定到某个段落的 innerHTML。
+>
+> ===》如果您移除了 **ng-app** 指令，HTML 将直接把表达式显示出来，不会去计算表达式的结果。
+
+
+
+#### 是什么？
+
+"AngularJS 是专门为应用程序设计的 HTML。"
+
+AngularJS 使得开发现代的单一页面应用程序（SPAs：Single Page Applications）变得更加容易。
+
+- AngularJS 把应用程序数据绑定到 HTML 元素。
+- AngularJS 可以克隆和重复 HTML 元素。
+- AngularJS 可以隐藏和显示 HTML 元素。
+- AngularJS 可以在 HTML 元素"背后"添加代码。
+- AngularJS 支持输入验证。
+
+#### 指令
+
+正如您所看到的，AngularJS 指令是以 **ng** 作为前缀的 HTML 属性。
+
+**ng-init** 指令初始化 AngularJS 应用程序变量。
+
+```html
+<div ng-app="" ng-init="firstName='John'">
+
+	<p>姓名为 <span ng-bind="firstName"></span></p>
+
+</div>
+```
+
+> HTML5 允许扩展的（自制的）属性，以 **data-** 开头。
+> AngularJS 属性以 **ng-** 开头，但是您可以使用 **data-ng-** 来让网页对 HTML5 有效。
+
+带有有效的 HTML5：
+
+```html
+<div data-ng-app="" data-ng-init="firstName='John'">
+
+	<p>姓名为 <span data-ng-bind="firstName"></span></p>
+
+</div>
+```
+
+#### 表达式
+
+AngularJS 表达式写在双大括号内：`{{ expression }}`。
+
+AngularJS 表达式把数据绑定到 HTML，这与` ng-bind` 指令有异曲同工之妙。
+
+AngularJS 将在表达式书写的位置"输出"数据。
+
+**AngularJS 表达式** 很像 **JavaScript 表达式**：它们可以包含文字、运算符和变量。
+
+实例` {{ 5 + 5 }} `或 `{{ firstName + " " + lastName }}`
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<div ng-app="">
+  <p>我的第一个表达式： {{ 5 + 5 }}</p>
+</div>
+
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js" rel="external nofollow" rel="external nofollow" rel="external nofollow" ></script>
+
+</body>
+</html>
+```
+
+AngularJS已经被用于Google的多款产品当中。
+
+AngularJS是为了克服HTML在构建应用上的不足而设计的。
+
+**AngularJS有着诸多特性，最为核心的是**：`MVC、模块化、自动化双向数据绑定、语义化标签、依赖注入等等`。HTML是一门很好的为静态文本展示设计的声明式语言。
+
+可以构建一个单一页面应用程序（SPAs：Single Page Applications）。
+
+#### **AngularJS的优缺点**
+
+- 优点
+  - AngularJS模板功能强大丰富，自带了极其丰富的angular指令。
+  - AngularJS是完全可扩展的，与其他库的兼容效果很好，每一个功能可以修改或更换，以满足开发者独特的开发流程和功能的需求。
+  - AngularJS是一个比较完善的前端MVC框架，包含服务，模板，数据双向绑定，模块化，路由，过滤器，依赖注入等所有功能；
+  - AngularJS是互联网巨人谷歌开发，这也意味着他有一个坚实的基础和社区支持。
+- 缺点
+  - AngularJS强约束导致学习成本较高，对前端不友好。但遵守 AngularJS 的约定时，生产力会很高，对 Java 程序员友好。
+  - AngularJS不利于SEO，因为所有内容都是动态获取并渲染生成的，搜索引擎没法爬取。
+  - 性能问题：AngularJS作为 MVVM 框架，因为实现了数据的双向绑定，对于大数组、复杂对象会存在性能问题。
+
+#### 相关网址
+
+- AngularJS官方下载地址：https://angularjs.org/
+
+------
+
+
 
 # TypeScript
 
