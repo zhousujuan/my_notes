@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS字符串</title>
+</head>
+<body>
+    <!-- 方案1： -->
+    <div ng-app="" ng-init="firstName='zhou'; lastName='sujuan'">
+        <p>姓名： {{ firstName + '-' + lastName }}</p>
+
+        <hr>
+
+        <p>姓名： <span ng-bind="firstName + '-' + lastName"></span></p>
+    </div>
+</body>
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js" rel="external nofollow" rel="external nofollow" rel="external nofollow" ></script>
+</html>

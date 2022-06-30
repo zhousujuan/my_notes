@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS数字</title>
+</head>
+<body>
+    <!-- AngularJS的数字就想JavaScript的数字 -->
+    <div ng-app="" ng-init="quantity=10; cost=5">
+        <!-- 实例1 -->
+        <p>总价： {{ quantity * cost }}</p>
+        <hr>
+
+        <!-- 实例2 -->
+        <p>总价：<span ng-bind="quantity * cost"></span></p>
+    </div>
+</body>
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js" rel="external nofollow" rel="external nofollow" rel="external nofollow" ></script>
+</html>
