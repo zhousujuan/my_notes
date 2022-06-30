@@ -161,7 +161,35 @@ AngularJS 使得开发现代的单一页面应用程序（SPAs：Single Page App
 </div>
 ```
 
-#### 表达式
+
+
+AngularJS已经被用于Google的多款产品当中。
+
+AngularJS是为了克服HTML在构建应用上的不足而设计的。
+
+**AngularJS有着诸多特性，最为核心的是**：`MVC、模块化、自动化双向数据绑定、语义化标签、依赖注入等等`。HTML是一门很好的为静态文本展示设计的声明式语言。
+
+可以构建一个单一页面应用程序（SPAs：Single Page Applications）。
+
+#### **AngularJS的优缺点**
+
+- 优点
+  - AngularJS模板功能强大丰富，自带了极其丰富的angular指令。
+  - AngularJS是完全可扩展的，与其他库的兼容效果很好，每一个功能可以修改或更换，以满足开发者独特的开发流程和功能的需求。
+  - AngularJS是一个比较完善的前端MVC框架，包含服务，模板，数据双向绑定，模块化，路由，过滤器，依赖注入等所有功能；
+  - AngularJS是互联网巨人谷歌开发，这也意味着他有一个坚实的基础和社区支持。
+- 缺点
+  - AngularJS强约束导致学习成本较高，对前端不友好。但遵守 AngularJS 的约定时，生产力会很高，对 Java 程序员友好。
+  - AngularJS不利于SEO，因为所有内容都是动态获取并渲染生成的，搜索引擎没法爬取。
+  - 性能问题：AngularJS作为 MVVM 框架，因为实现了数据的双向绑定，对于大数组、复杂对象会存在性能问题。
+
+#### 相关网址
+
+- AngularJS官方下载地址：https://angularjs.org/
+
+------
+
+### 表达式
 
 AngularJS 表达式写在双大括号内：`{{ expression }}`。
 
@@ -188,29 +216,49 @@ AngularJS 将在表达式书写的位置"输出"数据。
 </html>
 ```
 
-AngularJS已经被用于Google的多款产品当中。
+#### 数字
 
-AngularJS是为了克服HTML在构建应用上的不足而设计的。
+AngularJS数字就像JavaScript数字
 
-**AngularJS有着诸多特性，最为核心的是**：`MVC、模块化、自动化双向数据绑定、语义化标签、依赖注入等等`。HTML是一门很好的为静态文本展示设计的声明式语言。
+```html
+<div ng-app="" ng-init="quantity=1;cost=5">
 
-可以构建一个单一页面应用程序（SPAs：Single Page Applications）。
+	<p>总价： {{ quantity * cost }}</p>
 
-#### **AngularJS的优缺点**
+</div>
+```
 
-- 优点
-  - AngularJS模板功能强大丰富，自带了极其丰富的angular指令。
-  - AngularJS是完全可扩展的，与其他库的兼容效果很好，每一个功能可以修改或更换，以满足开发者独特的开发流程和功能的需求。
-  - AngularJS是一个比较完善的前端MVC框架，包含服务，模板，数据双向绑定，模块化，路由，过滤器，依赖注入等所有功能；
-  - AngularJS是互联网巨人谷歌开发，这也意味着他有一个坚实的基础和社区支持。
-- 缺点
-  - AngularJS强约束导致学习成本较高，对前端不友好。但遵守 AngularJS 的约定时，生产力会很高，对 Java 程序员友好。
-  - AngularJS不利于SEO，因为所有内容都是动态获取并渲染生成的，搜索引擎没法爬取。
-  - 性能问题：AngularJS作为 MVVM 框架，因为实现了数据的双向绑定，对于大数组、复杂对象会存在性能问题。
+使用ng-bind的相同实例：
 
-#### 相关网址
+```html
+<div ng-app="" ng-init="quantity=1;cost=5">
+    <p>总价： <span ng-bind="quantity * cost"></span></p>
+</div>
+```
 
-- AngularJS官方下载地址：https://angularjs.org/
+> 使用 **ng-init** 不是很常见。
+
+
+
+#### 字符串
+
+AngularJS字符串就像JavaScript字符串
+
+```html
+<div ng-app="" ng-init="firstName='John'; lastName='Doe'">
+    <p> 姓名：{{ firstName + '' + lastName }}</p>
+</div>
+```
+
+使用ng-bind的相同实例
+
+```html
+<div ng-app="" ng-init="firstName='Jhon'; lastName='Doe'">
+    <p>姓名： <span ng-bind="fistName + '' + lastName"></span></p>
+</div>
+```
+
+
 
 ------
 
