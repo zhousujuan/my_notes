@@ -62,9 +62,11 @@
 
 ## AngularJS
 
-图标库：[Material Symbols and Icons - Google Fonts](https://fonts.google.com/icons?selected=Material+Icons:sd_storage&icon.query=sort&icon.style=Outlined)
-
-ui库：[AngularJS Material - Demos > Icon](https://material.angularjs.org/latest/demo/icon)
+> 图标库：[Material Symbols and Icons - Google Fonts](https://fonts.google.com/icons?selected=Material+Icons:sd_storage&icon.query=sort&icon.style=Outlined)
+>
+> ui库：[AngularJS Material - Demos > Icon](https://material.angularjs.org/latest/demo/icon)
+>
+> [案例源码](https://gitee.com/zhousujuan/my_note/tree/master/docs/%E5%89%8D%E7%AB%AF/AngularJS)（为了方便，此处的案例源码，我这边直接就启用的是gitee仓库）
 
 ### 简介
 
@@ -88,6 +90,8 @@ ui库：[AngularJS Material - Demos > Icon](https://material.angularjs.org/lates
 2. **ng-app** 指令定义一个 AngularJS 应用程序。
 3. **ng-model** 指令把元素值（比如输入域的值）绑定到应用程序。
 4. **ng-bind** 指令把应用程序数据绑定到 HTML 视图。
+
+[源码](https://gitee.com/zhousujuan/my_note/blob/master/docs/%E5%89%8D%E7%AB%AF/AngularJS/01.%E7%AE%80%E4%BB%8B/01.AngularJS%E6%89%A9%E5%B1%95%E4%BA%86HTML.html)
 
 ```html
 <!DOCTYPE html>
@@ -139,6 +143,8 @@ AngularJS 使得开发现代的单一页面应用程序（SPAs：Single Page App
 正如您所看到的，AngularJS 指令是以 **ng** 作为前缀的 HTML 属性。
 
 **ng-init** 指令初始化 AngularJS 应用程序变量。
+
+[源码](https://gitee.com/zhousujuan/my_note/blob/master/docs/%E5%89%8D%E7%AB%AF/AngularJS/01.%E7%AE%80%E4%BB%8B/02.AngularJS%E6%8C%87%E4%BB%A4.html)
 
 ```html
 <div ng-app="" ng-init="firstName='John'">
@@ -201,6 +207,8 @@ AngularJS 将在表达式书写的位置"输出"数据。
 
 实例` {{ 5 + 5 }} `或 `{{ firstName + " " + lastName }}`
 
+[源码](https://gitee.com/zhousujuan/my_note/blob/master/docs/%E5%89%8D%E7%AB%AF/AngularJS/01.%E7%AE%80%E4%BB%8B/03.AngularJS%E8%A1%A8%E8%BE%BE%E5%BC%8F.html)
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -219,6 +227,8 @@ AngularJS 将在表达式书写的位置"输出"数据。
 #### 数字
 
 AngularJS数字就像JavaScript数字
+
+[源码](https://gitee.com/zhousujuan/my_note/blob/master/docs/%E5%89%8D%E7%AB%AF/AngularJS/02.%E8%A1%A8%E8%BE%BE%E5%BC%8F/01.%E6%95%B0%E5%AD%97.html)
 
 ```html
 <div ng-app="" ng-init="quantity=1;cost=5">
@@ -243,6 +253,8 @@ AngularJS数字就像JavaScript数字
 #### 字符串
 
 AngularJS字符串就像JavaScript字符串
+
+[源码](https://gitee.com/zhousujuan/my_note/blob/master/docs/%E5%89%8D%E7%AB%AF/AngularJS/02.%E8%A1%A8%E8%BE%BE%E5%BC%8F/02.%E5%AD%97%E7%AC%A6%E4%B8%B2.html)
 
 ```html
 <div ng-app="" ng-init="firstName='John'; lastName='Doe'">
