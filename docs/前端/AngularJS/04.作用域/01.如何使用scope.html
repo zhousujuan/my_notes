@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js" rel="external nofollow" rel="external nofollow" rel="external nofollow" ></script>
+    <title>如何使用scope</title>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <h1>{{ name }}</h1>
+    </div>
+</body>
+<script>
+    var app = angular.module('myApp', []);
+
+    app.controller('myCtrl', function($scope) {
+        $scope.name = 'zhousujuan';
+    })
+</script>
+</html>
