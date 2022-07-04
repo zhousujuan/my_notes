@@ -493,19 +493,30 @@ AngularJS 指令是扩展的 HTML 属性，带有前缀 `ng-`。
 
 #### ng-app
 
-`ng-app`指令初始化一个 AngularJS 应用程序。
+- `ng-app`指令初始化一个 AngularJS 应用程序。
 
-它告诉AngularJS,` <div> `元素是AngularJS应用程序的”所有者“；
+- 它告诉AngularJS,` <div> `元素是AngularJS应用程序的”所有者“；
 
-> 一个网页可以包含多个运行在不同元素中的AngularJs应用程序
+- 一个网页可以包含多个运行在不同元素中的AngularJs应用程序
+- 定义了 AngularJS 应用程序的 **根元素**。
+- 在网页加载完毕时会**自动引导**（自动初始化）应用程序。
 
-`ng-init` 指令初始化应用程序数据。
+#### ng-init
+
+- `ng-init` 指令初始化应用程序数据。
+- 为 AngularJS 应用程序定义了 **初始值**。
+- 通常情况下，不使用 ng-init。您将使用一个控制器或模块来代替它。
+
+#### ng-model  数据绑定
 
 `ng-model `指令把元素值（比如输入域的值）绑定到应用程序。
 
+**ng-model** 指令也可以：
 
-
-#### ng-model  数据绑定
+- 为应用程序数据提供类型验证（number、email、required）。
+- 为应用程序数据提供状态（invalid、dirty、touched、error）。
+- 为 HTML 元素提供 CSS 类。
+- 绑定 HTML 元素到 HTML 表单。
 
 > vue中的v-model和它的用法基本是一致的
 
@@ -519,7 +530,9 @@ AngularJS 指令是扩展的 HTML 属性，带有前缀 `ng-`。
 </div>
 ```
 
-#### 重复的HTML元素
+#### ng-repeat
+
+对于集合中（数组中）的每个项会 **克隆一次 HTML 元素**。
 
 ng-repeat指令会重复一个HTML元素
 
