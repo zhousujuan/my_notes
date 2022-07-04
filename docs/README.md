@@ -485,6 +485,36 @@ AngularJS的数组就像JavaScript的数组
 </div>
 ```
 
+### 指令
+
+AngularJS 通过被称为 指令 的新属性来扩展 HTML。
+
+AngularJS 指令是扩展的 HTML 属性，带有前缀 `ng-`。
+
+`ng-app`指令初始化一个 AngularJS 应用程序。
+
+`ng-init` 指令初始化应用程序数据。
+
+`ng-model `指令把元素值（比如输入域的值）绑定到应用程序。
+
+
+
+#### ng-model 
+
+> vue中的v-model和它的用法基本是一致的
+
+源码
+
+```html
+<div ng-app="" ng-init="name = 'zhousujuan'">
+        <p>在输入框中输入：</p>
+        <p>姓名： <input type="text" ng-model="name"></p>
+        <p>效果展示： {{name}}</p>
+</div>
+```
+
+
+
 
 
 ------
