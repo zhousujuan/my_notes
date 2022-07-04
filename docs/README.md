@@ -18,6 +18,190 @@
 
 ## Vue
 
+### 条件渲染
+
+#### v-if
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件渲染</title>
+    <!-- 引入vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h2>当前的n的值： {{n}}</h2>
+        <button @click="n++">点击我n+1</button>
+        <!-- 使用v-if做条件渲染 -->
+        <h2 v-if="false">欢迎你！ {{name}}</h2>
+        <h2 v-if="n === 1">我出来了，现在是n=1</h2>
+    </div>
+</body>
+<script type="text/javascript">
+    Vue.config.productionTip = false;
+
+    new Vue({
+        el: '#root',
+        data: {
+            n: 0,
+            name: 'zhousujuan'
+        },
+    })
+</script>
+</html>
+```
+
+
+
+> ```
+> v-if
+>         写法：
+>             (1): v-if="表达式"
+>             (2): v-else-if="表达式"
+>             (3): v-else="表达式"
+>         适用于：切换频率较低的场景
+>         特点：不展示的DOM元素直接被移除
+>         注意：v-if可以和：v-else-if、v-else一起使用，但是要求结构不能被"打断"。
+> ```
+
+
+
+#### v-else和v-else-if
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件渲染</title>
+    <!-- 引入vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h2>当前的n的值： {{n}}</h2>
+        <button @click="n++">点击我n+1</button>
+        <!-- v-else 和 v-else-if -->
+        <div v-if="n === 1">当n等于1</div>
+        <div v-else-if="n === 2">当n等于2</div>
+        <div v-else-if="n === 3">当n等于3</div>
+        <div v-else>我是其他</div>
+    </div>
+</body>
+<script type="text/javascript">
+    Vue.config.productionTip = false;
+
+    new Vue({
+        el: '#root',
+        data: {
+            n: 0,
+            name: 'zhousujuan'
+        },
+    })
+</script>
+</html>
+```
+
+> 当然这里的v-else-if也可以转换成v-if来展示，但是我们这里的v-if是都要判断，v-else-if是逐层判断，只要有一个是满足条件的，就是跳出，但是v-if是所有的都要判断
+
+#### v-if和tempelate的配合使用
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件渲染</title>
+    <!-- 引入vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h2>当前的n的值： {{n}}</h2>
+        <button @click="n++">点击我n+1</button>
+        <!-- v-if和tempelate的配合使用 -->
+        <template v-if="n===1">
+            <h2>hello</h2>
+            <h2>你好</h2>
+            <h2>深圳</h2>
+        </template>
+    </div>
+</body>
+<script type="text/javascript">
+    Vue.config.productionTip = false;
+
+    new Vue({
+        el: '#root',
+        data: {
+            n: 0,
+            name: 'zhousujuan'
+        },
+    })
+</script>
+</html>
+```
+
+> template的使用是为了不影响结构，但是只能配合v-if来使用哦
+
+#### v-show
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件渲染</title>
+    <!-- 引入vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h2>当前的n的值： {{n}}</h2>
+        <button @click="n++">点击我n+1</button>
+        <!-- 使用v-show做条件渲染 -->
+        <h2 v-show="false">欢迎你！ {{name}}</h2>
+        <h2 v-show="n === 1">我出来了，现在是n=1</h2>
+    </div>
+</body>
+<script type="text/javascript">
+    Vue.config.productionTip = false;
+
+    new Vue({
+        el: '#root',
+        data: {
+            n: 0,
+            name: 'zhousujuan'
+        },
+    })
+</script>
+</html>
+```
+
+
+
+>     v-show
+>         写法：v-show="表达式"
+>         适用于：切换频率较高的场景
+>         特点: 不展示的DOM元素未被移除，仅仅是使用样式隐藏掉
+>
+
+`备注：使用v-if的时候，元素可能无法获取到，而使用v-show一定可以获取到`
+
+------
+
+
+
 ## React
 
 ### 简介
@@ -1446,6 +1630,8 @@ Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个�
 Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。
 
 # Linux
+
+
 
 ------
 
