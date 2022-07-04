@@ -503,7 +503,7 @@ AngularJS 指令是扩展的 HTML 属性，带有前缀 `ng-`。
 
 > vue中的v-model和它的用法基本是一致的
 
-源码
+[源码](https://gitee.com/zhousujuan/my_note/blob/master/docs/%E5%89%8D%E7%AB%AF/AngularJS/03.%E6%8C%87%E4%BB%A4/1.ng-model.html)
 
 ```html
 <div ng-app="" ng-init="name = 'zhousujuan'">
