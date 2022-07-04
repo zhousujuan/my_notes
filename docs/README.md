@@ -454,6 +454,37 @@ AngularJS字符串就像JavaScript字符串
 </div>
 ```
 
+#### 对象
+
+AngularJS的对象就像JavaScript的对象
+
+[源码](https://gitee.com/zhousujuan/my_note/blob/master/docs/%E5%89%8D%E7%AB%AF/AngularJS/02.%E8%A1%A8%E8%BE%BE%E5%BC%8F/03.%E5%AF%B9%E8%B1%A1.html)
+
+```html
+<div ng-app="" ng-init="person={firstName: 'sujuan',lastName: 'zhou'}">
+        <p>姓名为：{{person.lastName + person.firstName}}</p>
+        <hr>
+        <!-- ng-bind -->
+        <p>姓名为：<span ng-bind="person.lastName + person.firstName"></span></p>
+</div>
+```
+
+#### 数组
+
+AngularJS的数组就像JavaScript的数组
+
+[源码](https://gitee.com/zhousujuan/my_note/blob/master/docs/%E5%89%8D%E7%AB%AF/AngularJS/02.%E8%A1%A8%E8%BE%BE%E5%BC%8F/04.%E6%95%B0%E7%BB%84.html)
+
+```html
+<div ng-app="" ng-init="points=[1,25,36,22]">
+        <p>points的第三个值是： {{points[2]}}</p>
+
+        <hr>
+
+        <p>points的第三个值是： <span ng-bind="points[2]"></span></p>
+</div>
+```
+
 
 
 ------
