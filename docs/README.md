@@ -491,7 +491,13 @@ AngularJS 通过被称为 指令 的新属性来扩展 HTML。
 
 AngularJS 指令是扩展的 HTML 属性，带有前缀 `ng-`。
 
+#### ng-app
+
 `ng-app`指令初始化一个 AngularJS 应用程序。
+
+它告诉AngularJS,` <div> `元素是AngularJS应用程序的”所有者“；
+
+> 一个网页可以包含多个运行在不同元素中的AngularJs应用程序
 
 `ng-init` 指令初始化应用程序数据。
 
@@ -499,7 +505,7 @@ AngularJS 指令是扩展的 HTML 属性，带有前缀 `ng-`。
 
 
 
-#### ng-model 
+#### ng-model  数据绑定
 
 > vue中的v-model和它的用法基本是一致的
 
@@ -513,7 +519,22 @@ AngularJS 指令是扩展的 HTML 属性，带有前缀 `ng-`。
 </div>
 ```
 
+#### 重复的HTML元素
 
+ng-repeat指令会重复一个HTML元素
+
+> 这个相当于vue中的v-for指令
+
+源码
+
+```html
+<div ng-app="" ng-init="arr=[111,222,333,444,555,666]">
+        <p>使用ng-repeat来循环数组</p>
+        <ul>
+            <li ng-repeat="list in arr">{{list}}</li>
+        </ul>
+</div>
+```
 
 
 
