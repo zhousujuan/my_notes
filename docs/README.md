@@ -604,6 +604,78 @@ scope 是模型。
 
 scope 是一个 JavaScript 对象，带有属性和方法，这些属性和方法可以在视图和控制器中使用。
 
+#### 作用域范围
+
+了解你当前使用的 scope 是非常重要的。
+
+在以上两个实例中，只有一个作用域 scope，所以处理起来比较简单，但在大型项目中， HTML DOM 中有多个作用域，这时你就需要知道你使用的 scope 对应的作用域是哪一个。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js" rel="external nofollow" rel="external nofollow" rel="external nofollow" ></script>
+    <title>scope作用域范围</title>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <ul>
+            <li ng-repeat="list in arr">{{ list }}</li>
+        </ul>
+    </div>
+</body>
+<script>
+    var app = angular.module('myApp', []);
+
+    app.controller('myCtrl', function($scope) {
+        $scope.arr = [1111,2222,333]
+    })
+
+</script>
+</html>
+```
+
+#### 根作用域
+
+所有的应用都有一个 `$rootScope`，它可以作用在 `ng-app `指令包含的所有 HTML 元素中。
+
+`$rootScope `可作用于整个应用中。是各个 `controller `中 `scope` 的桥梁。用` rootscope` 定义的值，可以在各个 `controller `中使用。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>根作用域</title>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <ul>
+            <li ng-repeat="list in names">{{country}} {{list}}</li>
+        </ul>
+    </div>
+</body>
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js" rel="external nofollow" rel="external nofollow" rel="external nofollow" ></script>
+<script>
+    var app = angular.module('myApp', []);
+
+    app.controller('myCtrl', function($scope, $rootScope) {
+        $scope.names = ['张三', '李四', '王二'];
+        $rootScope.country = '中国'
+    });
+</script>
+</html>
+```
+
+
+
+> 创建控制器时，将 $rootScope 作为参数传递，可在应用中使用：
+
 ------
 
 
