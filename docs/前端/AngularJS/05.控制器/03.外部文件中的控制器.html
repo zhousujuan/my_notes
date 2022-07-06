@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外部文件中的控制器</title>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="personController">
+        名: <input type="text" ng-model="firstName"><br>
+
+        姓: <input type="text" ng-model="lastName"><br>
+
+        <br>
+        姓名: {{ fullName() }}
+    </div>
+</body>
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js" rel="external nofollow" rel="external nofollow" rel="external nofollow" ></script>
+<script src="personController.js"></script>
+</html>
